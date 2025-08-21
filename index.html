@@ -1,87 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JemapplleSam
-    </title>
-    <link rel="stylesheet" href="style.css" >
-    <script src="script.js"></script>
-   
+  <meta charset="utf-8">
+  <title>Sorteador de Condição</title>
+  <script>
+    // COLE SUAS DUAS URLs PRÉ-PREENCHIDAS DO GOOGLE FORMS:
+    const urlIA = "https://www.google.com/";
+    const urlHumano = "https://www.youtube.com/watch?v=FB91iKKpSIQ";
 
+    // Redirecionamento aleatório 50/50
+    window.onload = function() {
+      const destino = Math.random() < 0.5 ? urlIA : urlHumano;
+      window.location.replace(destino);
+    };
+  </script>
 </head>
-
 <body>
- <div class="banner">
-    <video autoplay muted loop id="video" > <source src="https://videos-cdn.readymag.com/57470024c12f9f797e5dfb4f/575f09bbf257065e3d8fba7d/cd733610-44d7-49b9-901e-8c89ad3ccbeb.mp4" type="video/mp4"></video>
-    <div class="introduction">
-        <p> Full stack developer
-            <br>Born in Brazil
-            <br>Raised by the 00's
-        </p>
-       </div>
-</div>
-<diV class="titulos">
-  <p id="EX">EXPERIENCE</p>
-</diV>
-
-
-
-<div class="timeline-container" id="timeline-1">
-    <div class="timeline">
-      <div class="timeline-item" data-text="FUVS">
-        <div class="timeline__content">
-          <h2 class="timeline__content-title">May, 2022</h2>
-          <p class="timeline__content-desc">
-            Front-end development intern, working on the maintenance of web pages using HTML5, CSS3, and JavaScript.</p>
-        </div>
-      </div>
-      <div class="timeline-item" data-text="SMART CONSULTING">
-        <div class="timeline__content">
-          <h2 class="timeline__content-title">August, 2022</h2>
-          <p class="timeline__content-desc">
-            Full-stack development intern for CRM solutions, specializing in Dynamics 365 and the Power Platform. Engaged in building automated workflow flows using Power Automate, creating plugins with C# and .NET, developing web components with HTML5, CSS3, and JavaScript. Additionally, involved in data handling and visualization using Power BI.</p>
-        </div>
-      </div>
-      <div class="timeline-item" data-text="SMART CONSULTING">
-        <div class="timeline__content">
-          <h2 class="timeline__content-title">January, 2023</h2>
-          <p class="timeline__content-desc">
-            Full-stack developer for CRM solutions, specializing in Dynamics 365 and the Power Platform. Engaged in building automated workflow flows using Power Automate, creating plugins with C# and .NET, developing web components with HTML5, CSS3, and JavaScript. Additionally, involved in data handling and visualization using Power BI. Currently, providing support for a supplier registration system for one of the largest retailers in the country.
-            
-            
-            
-            
-            
-            </p>
-        </div>
-    </div>
-
-    </div>
-
-    <div class="titulos">
-      <p id="ED">EDUCATION</p>
-    </div>
-    <section>
-      <div class="education-item">
-          <h3>Vale do Sapucai University</h3>
-          <p>Bachelor's degree in Information Systems</p>
-          <p> 2022- 2025</p>
-      </div>
-  </section>
-
-  
-  <div class="titulos">
-    <p id="CM">CONTACT ME</p>
-  </div>
-   
-  <div class="contact-links">
-    <a class="CI" href="https://www.linkedin.com/in/samuelhspv/" target="_blank">
-        <img src="https://img.icons8.com/material-sharp/48/000000/linkedin.png" alt="GitHub" class="icon">
-    </a>
-    <a class="CI" href="https://github.com/jemappellesam" target="_blank">
-        <img src="https://img.icons8.com/material-outlined/48/000000/github.png" alt="E-mail" class="icon">
-    </a>
-</div>
+  <p>Redirecionando para o formulário...</p>
 </body>
 </html>
