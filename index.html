@@ -1,21 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <title>Sorteador de Condição</title>
-  <script>
-    // COLE SUAS DUAS URLs PRÉ-PREENCHIDAS DO GOOGLE FORMS:
-    const urlIA = "https://www.google.com/";
-    const urlHumano = "https://www.youtube.com/watch?v=FB91iKKpSIQ";
-
-    // Redirecionamento aleatório 50/50
-    window.onload = function() {
-      const destino = Math.random() < 0.5 ? urlIA : urlHumano;
-      window.location.replace(destino);
-    };
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Ponto de Equilíbrio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p>Redirecionando para o formulário...</p>
+    <div class="container">
+        <h1>📊 Calculadora de Ponto de Equilíbrio</h1>
+        <form id="calcForm">
+            <div class="input-group">
+                <label for="gastoFixo">Gasto Fixo (R$):</label>
+                <input type="number" id="gastoFixo" required step="0.01">
+            </div>
+
+            <div class="input-group">
+                <label for="precoVenda">Preço de Venda (R$):</label>
+                <input type="number" id="precoVenda" required step="0.01">
+            </div>
+
+            <div class="input-group">
+                <label for="gastoVariavel">Gasto Variável (R$):</label>
+                <input type="number" id="gastoVariavel" required step="0.01">
+            </div>
+
+            <hr>
+
+            <div class="input-group">
+                <label for="lucro">Lucro (R$):</label>
+                <input type="number" id="lucro" required step="0.01">
+            </div>
+
+            <div class="input-group">
+                <label for="receitaVenda">Receita de Venda (R$):</label>
+                <input type="number" id="receitaVenda" required step="0.01">
+            </div>
+
+            <div class="input-group">
+                <label for="capitalInvestido">Capital Investido (R$):</label>
+                <input type="number" id="capitalInvestido" required step="0.01">
+            </div>
+
+            <button type="submit">Calcular</button>
+        </form>
+
+        <div class="result">
+            <h2>📈 Resultados</h2>
+            <p id="resultadoPE">Ponto de Equilíbrio: —</p>
+            <p id="resultadoLucro">Lucratividade: —</p>
+            <p id="resultadoRent">Rentabilidade: —</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
