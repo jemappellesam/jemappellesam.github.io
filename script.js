@@ -1,88 +1,32 @@
+document.getElementById("calcForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
+    const gastoFixo = parseFloat(document.getElementById("gastoFixo").value);
+    const precoVenda = parseFloat(document.getElementById("precoVenda").value);
+    const gastoVariavel = parseFloat(document.getElementById("gastoVariavel").value);
+    const lucro = parseFloat(document.getElementById("lucro").value);
+    const receitaVenda = parseFloat(document.getElementById("receitaVenda").value);
+    const capitalInvestido = parseFloat(document.getElementById("capitalInvestido").value);
 
-* {
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    if (precoVenda <= gastoVariavel) {
+        alert("⚠️ O preço de venda deve ser maior que o gasto variável!");
+        return;
+    }
 
-body {
-    background: linear-gradient(135deg, #20232a, #3b3f47);
-    color: #f1f1f1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    margin: 0;
-    padding-top: 40px;
-}
+    const pontoEquilibrio = gastoFixo / (precoVenda - gastoVariavel);
+    const lucratividade = (lucro / receitaVenda) * 100;
+    const rentabilidade = (lucro / capitalInvestido) * 100;
 
-.container {
-    background: #2c2f36;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    width: 90%;
-    max-width: 500px;
-}
+    const formatar = (valor, casasDecimais = 2) => {
+        return valor.toLocaleString("pt-BR", { minimumFractionDigits: casasDecimais, maximumFractionDigits: casasDecimais });
+    };
 
-h1 {
-    text-align: center;
-    color: #00bfa6;
-    margin-bottom: 25px;
-}
+    document.getElementById("resultadoPE").textContent = 
+        `Ponto de Equilíbrio: ${formatar(pontoEquilibrio)} unidades`;
 
-.input-group {
-    margin-bottom: 15px;
-}
+    document.getElementById("resultadoLucro").textContent = 
+        `Lucratividade: ${formatar(lucratividade)}%`;
 
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 6px;
-    outline: none;
-    background: #444;
-    color: #fff;
-    font-size: 1rem;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    background: #00bfa6;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: 0.3s;
-}
-
-button:hover {
-    background: #00997f;
-}
-
-.result {
-    margin-top: 25px;
-    background: #1f2126;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.result h2 {
-    color: #00bfa6;
-    margin-bottom: 10px;
-}
-
-.result p {
-    margin: 8px 0;
-    font-size: 1.1rem;
-}
+    document.getElementById("resultadoRent").textContent = 
+        `Rentabilidade: ${formatar(rentabilidade)}%`;
+});
